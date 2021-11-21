@@ -1,0 +1,1 @@
+Install `kotest` intellij plugin.

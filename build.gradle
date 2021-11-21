@@ -1,0 +1,30 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+}
+
+group 'com.github.c2v4'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def arrow_version = "1.0.1"
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4'
+//    implementation "io.arrow-kt:arrow-core:$arrow_version"
+//    implementation "io.arrow-kt:arrow-syntax:$arrow_version"
+
+    testImplementation group: 'io.kotest', name: 'kotest-runner-junit5-jvm', version: '4.6.3'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}
