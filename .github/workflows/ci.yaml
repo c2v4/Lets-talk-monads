@@ -1,4 +1,4 @@
-name: Java CI
+name: Test
 
 on: [push]
 
@@ -13,5 +13,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew test
