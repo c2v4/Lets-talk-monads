@@ -12,7 +12,7 @@ val <T> List<T>.head: T
     get() = first()
 
 fun <A> isSorted(aa: List<A>, order: (A, A) -> Boolean): Boolean =
-        TODO()
+    TODO()
 
 class Exercise : WordSpec({
 
